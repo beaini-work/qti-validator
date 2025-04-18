@@ -2,7 +2,7 @@
 set -e
 
 # Build the Java application with latest changes
-gradle clean build
+./gradlew clean build
 
 # Apply Terraform changes
 cd terraform

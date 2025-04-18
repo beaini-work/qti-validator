@@ -1,1 +1,1 @@
-web: java -jar build/libs/qti-validator.jar 
+web: PORT=5000 java -jar build/libs/qti-validator.jar 

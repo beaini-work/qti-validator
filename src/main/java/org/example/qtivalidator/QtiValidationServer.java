@@ -16,7 +16,8 @@ import java.util.Map;
 
 public class QtiValidationServer {
 
-    private static final int PORT = 8080;
+    // Read port from environment variable or use 5000 as fallback
+    private static final int PORT = Integer.parseInt(System.getenv().getOrDefault("PORT", "5000"));
 
     /* ---------- pre-compiled QTI schemas ---------- */
     private static final Map<String, Schema> QTI_SCHEMAS = loadQtiSchemas();
@@ -36,38 +37,67 @@ public class QtiValidationServer {
     }
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
+        // Print environment variables and port info for debugging
+        System.out.println("Environment variables:");
+        System.getenv().forEach((key, value) -> System.out.println(key + "=" + value));
+        System.out.println("Starting server on port: " + PORT);
+        
+        try {
+            HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
 
-        server.createContext("/validate", exchange -> {
-            if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
-                exchange.sendResponseHeaders(405, -1);
-                return;
-            }
+            // Add health check endpoint
+            server.createContext("/healthCheck", exchange -> {
+                if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())) {
+                    exchange.sendResponseHeaders(405, -1);
+                    return;
+                }
+                respond(exchange, 200, "OK");
+            });
 
-            String xml = new String(exchange.getRequestBody().readAllBytes(),
-                                    StandardCharsets.UTF_8);
+            // Also add health check at root path for ALB
+            server.createContext("/", exchange -> {
+                if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())) {
+                    exchange.sendResponseHeaders(405, -1);
+                    return;
+                }
+                respond(exchange, 200, "OK");
+            });
 
-            String param = getQueryParam(exchange.getRequestURI(), "schema");
-            if (param == null || param.isBlank()) {
-                respond(exchange, 400, "Missing ?schema=");
-                return;
-            }
+            server.createContext("/validate", exchange -> {
+                if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+                    exchange.sendResponseHeaders(405, -1);
+                    return;
+                }
 
-            Schema schema = QTI_SCHEMAS.get(param);        // qti3 / qti21 ?
-            if (schema == null)                            // else treat param as path/URL
-                schema = schemaFromDisk(param);
+                String xml = new String(exchange.getRequestBody().readAllBytes(),
+                                        StandardCharsets.UTF_8);
 
-            Validator v = schema.newValidator();
-            try {
-                v.validate(new StreamSource(new StringReader(xml)));
-                respond(exchange, 200, "VALID");
-            } catch (Exception e) {
-                respond(exchange, 422, "INVALID: " + e.getMessage());
-            }
-        });
+                String param = getQueryParam(exchange.getRequestURI(), "schema");
+                if (param == null || param.isBlank()) {
+                    respond(exchange, 400, "Missing ?schema=");
+                    return;
+                }
 
-        server.start();
-        System.out.printf("QTI-validator listening on http://localhost:%d/validate%n", PORT);
+                Schema schema = QTI_SCHEMAS.get(param);        // qti3 / qti21 ?
+                if (schema == null)                            // else treat param as path/URL
+                    schema = schemaFromDisk(param);
+
+                Validator v = schema.newValidator();
+                try {
+                    v.validate(new StreamSource(new StringReader(xml)));
+                    respond(exchange, 200, "VALID");
+                } catch (Exception e) {
+                    respond(exchange, 422, "INVALID: " + e.getMessage());
+                }
+            });
+
+            server.start();
+            System.out.println("QTI-validator successfully started and listening on port " + PORT);
+            System.out.println("Health check endpoints available at / and /healthCheck");
+        } catch (Exception e) {
+            System.err.println("Failed to start server: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /* ---------- helpers ---------- */

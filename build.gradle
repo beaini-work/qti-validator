@@ -4,11 +4,20 @@ plugins {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(23)   // works on JDK 11+
+    toolchain.languageVersion = JavaLanguageVersion.of(21)   // changed from 23 to 17
 }
 
 repositories { mavenCentral() }   // JDK alone is enough
 
 dependencies { }                  // no external libs
 
-application { mainClass = 'org.example.qtivalidator.QtiValidationServer' } 
+application { mainClass = 'org.example.qtivalidator.QtiValidationServer' }
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.example.qtivalidator.QtiValidationServer'
+        )
+    }
+    archiveFileName = 'qti-validator.jar'
+} 

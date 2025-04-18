@@ -48,8 +48,13 @@ public class QtiValidationServer {
 
             // Add health check endpoint
             server.createContext("/healthCheck", exchange -> {
-                if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())) {
+                String method = exchange.getRequestMethod();
+                if (!"GET".equalsIgnoreCase(method) && !"HEAD".equalsIgnoreCase(method)) {
                     exchange.sendResponseHeaders(405, -1);
+                    return;
+                }
+                if ("HEAD".equalsIgnoreCase(method)) {
+                    exchange.sendResponseHeaders(200, -1); // no body for HEAD
                     return;
                 }
                 respond(exchange, 200, "OK");
@@ -57,8 +62,13 @@ public class QtiValidationServer {
 
             // Also add health check at root path for ALB
             server.createContext("/", exchange -> {
-                if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())) {
+                String methodRoot = exchange.getRequestMethod();
+                if (!"GET".equalsIgnoreCase(methodRoot) && !"HEAD".equalsIgnoreCase(methodRoot)) {
                     exchange.sendResponseHeaders(405, -1);
+                    return;
+                }
+                if ("HEAD".equalsIgnoreCase(methodRoot)) {
+                    exchange.sendResponseHeaders(200, -1);
                     return;
                 }
                 respond(exchange, 200, "OK");

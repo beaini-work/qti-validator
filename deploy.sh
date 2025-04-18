@@ -2,7 +2,7 @@
 set -e
 
 # Build the Java application
-./gradlew build
+gradle build
 
 # Deploy with Terraform
 cd terraform

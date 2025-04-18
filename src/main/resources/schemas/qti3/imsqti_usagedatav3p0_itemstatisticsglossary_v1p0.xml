@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ********************************************************************************************** -->
+<!--                                                                                                -->
+<!-- Author:         Colin Smythe (IMS Global) and Mark McKell (IMS Global)                         -->
+<!-- Date:           2021-12-20                                                                     -->
+<!-- Version:        1.0                                                                            -->
+<!-- Status:         Final Release                                                                  -->
+<!--                                                                                                -->
+<!-- Description:    The set of terms that would be used to collect the item statistics. This is t- -->
+<!--                 he value that will be entered in the 'name' element.                           -->
+<!--                 The set of terms in the vocabulary are:                                        -->
+<!--                 * A-Param;                                                                     -->
+<!--                 * AIS;                                                                         -->
+<!--                 * B-Param;                                                                     -->
+<!--                 * C-Param;                                                                     -->
+<!--                 * D-Param;                                                                     -->
+<!--                 * Fifths_Table_Highest;                                                        -->
+<!--                 * Fifths_Table_Lowest;                                                         -->
+<!--                 * Fifths_Table_Middle;                                                         -->
+<!--                 * Fifths_Table_Second_Highest;                                                 -->
+<!--                 * Fifths_Table_Second_Lowest;                                                  -->
+<!--                 * P-value;                                                                     -->
+<!--                 * PHI;                                                                         -->
+<!--                 * PTbis;                                                                       -->
+<!--                 * Polyserial;                                                                  -->
+<!--                 * Score_Conversion;                                                            -->
+<!--                 * rbis;                                                                        -->
+<!--                                                                                                -->
+<!-- History:        The first formal release of this QTI Glossary as part of QTI 3.0.              -->
+<!--                                                                                                -->
+<!-- Licenses:       IPR and Distribution Notices                                                   -->
+<!--                                                                                                -->
+<!--                 This machine readable vocabulary is derived from the IMS Global specification  -->
+<!--                 IMS Global Question and Test Interoperability (QTI): Usage Data Specification  -->
+<!--                 Version 3.0 found at http://www.imsglobal.org/question and the original IMS G- -->
+<!--                 lobal schema binding or code base http://www.imsglobal.org/question.           -->
+<!--                                                                                                -->
+<!--                 Recipients of this document are requested to submit, with their comments, not- -->
+<!--                 ification of any relevant patent claims or other intellectual property rights  -->
+<!--                 of which they may be aware that might be infringed by any implementation of t- -->
+<!--                 he specification set forth in this document, and to provide supporting docume- -->
+<!--                 ntation.                                                                       -->
+<!--                                                                                                -->
+<!--                 IMS takes no position regarding the validity or scope of any intellectual pro- -->
+<!--                 perty or other rights that  might be claimed to pertain to the implementation  -->
+<!--                 or use of the technology described in this document or the extent to which any -->
+<!--                 license under such rights might or might not be  available; neither does it r- -->
+<!--                 epresent that it has made any effort to identify any such rights. Information  -->
+<!--                 on the IMS procedures with respect to rights in IMS specifications  can be fo- -->
+<!--                 und at the IMS Intellectual Property Rights web page: http://www.imsglobal.or- -->
+<!--                 g/ipr/imsipr_policyFinal.pdf.                                                  -->
+<!--                                                                                                -->
+<!--                 Copyright © IMS Global Learning Consortium 1999-2021. All Rights Reserved.     -->
+<!--                                                                                                -->
+<!--                 Use of this specification to develop products or services is governed by the   -->
+<!--                 license with IMS found on the IMS website: http://www.imsglobal.org/license.h- -->
+<!--                 tml.                                                                           -->
+<!--                                                                                                -->
+<!--                 Permission is granted to all parties to use excerpts from this document as ne- -->
+<!--                 eded in producing requests for proposals.                                      -->
+<!--                                                                                                -->
+<!--                 The limited permissions granted above are perpetual and will not be revoked by -->
+<!--                 IMS or its successors or assigns.                                              -->
+<!--                                                                                                -->
+<!--                 THIS SPECIFICATION IS BEING OFFERED WITHOUT ANY WARRANTY WHATSOEVER, AND IN P- -->
+<!--                 ARTICULAR,  ANY WARRANTY OF NONINFRINGEMENT IS EXPRESSLY DISCLAIMED. ANY USE   -->
+<!--                 OF THIS SPECIFICATION SHALL BE MADE ENTIRELY AT THE IMPLEMENTERS OWN RISK, AND -->
+<!--                 NEITHER THE  CONSORTIUM, NOR ANY OF ITS MEMBERS OR SUBMITTERS, SHALL HAVE ANY  -->
+<!--                 LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD PARTY FOR ANY DAMAGES OF ANY  -->
+<!--                 NATURE WHATSOEVER,  DIRECTLY OR INDIRECTLY, ARISING FROM THE USE OF THIS SPEC- -->
+<!--                 IFICATION.                                                                     -->
+<!--                                                                                                -->
+<!-- Source XSLT File Information                                                                   -->
+<!-- ============================                                                                   -->
+<!-- XSL Generator:  Specificationv1p0_GenerationToolv1.xsl                                         -->
+<!-- XSLT Processor: Saxon-HE-9.4.0.4                                                               -->
+<!-- Release:        1.0                                                                            -->
+<!-- Date:           31st January, 2021                                                             -->
+<!-- Autogen Eng:    Colin Smythe (IMS Global, UK)                                                  -->
+<!-- Autogen Date:   2021-11-16                                                                     -->
+<!--                                                                                                -->
+<!-- Webster Auto-generation Toolkit                                                                -->
+<!-- ===============================                                                                -->
+<!-- This VDEX was auto-generated using the IMS Global Binding Auto-generation Toolkit (I-BAT). Wh- -->
+<!-- ile every attempt has been made to ensure that this tool auto-generates the VDEXs correctly,   -->
+<!-- users should be aware that this is an experimental tool. Permission is given to make use of t- -->
+<!-- his tool. IMS Global makes no claim on the materials created by third party users of this too- -->
+<!-- l. Details on how to use this auto-generation toolkit are available at the IMS Global web-sit- -->
+<!-- e: www.imsglobal.org.'                                                                         -->
+<!--                                                                                                -->
+<!-- Tool Copyright: 2005-2021 (c) IMS Global Learning Consortium Inc.  All Rights Reserved.        -->
+<!--                                                                                                -->
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<vdex profileType="glossaryOrDictionary" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 https://purl.imsglobal.org/spec/vdex/v1p0/schema/xsd/imsvdex_v1p0.xsd http://ltsc.ieee.org/xsd/LOM https://purl.imsglobal.org/spec/md/v1p3/schema/xsd/imsmd_loose_v1p3p2.xsd" orderSignificant="false" language="en-US">
+    <vocabName>
+        <langstring language="en-US">IMS Global QTI Glossary of Terms for Usage Data Item Statistics</langstring>
+    </vocabName>
+    <vocabIdentifier isRegistered="true">http://www.imsglobal.org/qti/qtiv3p0/imsqti_usagedatav3p0_itemstatisticsglossary_v1p0</vocabIdentifier>
+    <term>
+        <termIdentifier>A-Param</termIdentifier>
+        <caption>
+            <langstring language="en-US">IRT a parameter</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Index of item discrimination based on item response theory.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, A-Param, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>AIS</termIdentifier>
+        <caption>
+            <langstring language="en-US">Average Item Score</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of item difficulty. Equal to the mean of the item scores for a group of individuals. For a rights-only dichotomously scored test, equivalent to the percent answering the item correctly (P-value).</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Distractor Statistics, AIS, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>B-Param</termIdentifier>
+        <caption>
+            <langstring language="en-US">IRT b parameter</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Index of item difficulty based on item response theory.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, B-Param, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>C-Param</termIdentifier>
+        <caption>
+            <langstring language="en-US">IRT c parameter</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">The lower asymptote of the item response function. Generally an index of guessing i.e. the probability of getting the item correct for very low ability examinees.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, C-Param, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>D-Param</termIdentifier>
+        <caption>
+            <langstring language="en-US">IRT d parameter</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A measure of the dispersion of the item computed using the IRT method.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, D-Param, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Fifths_Table_Highest</termIdentifier>
+        <caption>
+            <langstring language="en-US">Fifths_Table_Highest</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Count of examinees in the highest fifth of the test score distribution who selected the specified option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Fifths_Table_Highest, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Fifths_Table_Lowest</termIdentifier>
+        <caption>
+            <langstring language="en-US">Fifths_Table_Lowest</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Count of examinees in the lowest fifth of the test score distribution who selected the specified option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Fifths_Table_Lowest, IMS Global QTIv2.1</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Fifths_Table_Middle</termIdentifier>
+        <caption>
+            <langstring language="en-US">Fifths_Table_Middle</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Count of examinees in the middle fifth of the test score distribution who selected the specified option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Fifths_Table_Middle, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Fifths_Table_Second_Highest</termIdentifier>
+        <caption>
+            <langstring language="en-US">Fifths_Table_Second_Highest</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Count of examinees in the second highest fifth of the test score distribution who selected the specified option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Fifths_Table_Second_Highest, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Fifths_Table_Second_Lowest</termIdentifier>
+        <caption>
+            <langstring language="en-US">Fifths_Table_Second_Lowest</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Count of examinees in the second lowest fifth of the test score distribution who selected the specified option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Fifths_Table_Second_Lowest, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>P-value</termIdentifier>
+        <caption>
+            <langstring language="en-US">P-value</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of item difficulty. It is equal to the percent answering the item correctly.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, P-value, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>PHI</termIdentifier>
+        <caption>
+            <langstring language="en-US">Phi coefficient</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of item discrimination, Phi is the correlation of two dichotomous variables. In item analysis, it is generally the correlation between getting an item right or wrong and some dichotomous variable e.g. pass, fail.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, PHI, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>PTbis</termIdentifier>
+        <caption>
+            <langstring language="en-US">r-pointbiserial</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of item discrimination, r-pointbiserial is the point biserial correlation between the score on a dichotomous item and a criterion which is a variable that can take many possible values, such as total score on the test.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, PTbis, IMS Global QTIv2.1</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Polyserial</termIdentifier>
+        <caption>
+            <langstring language="en-US">Polyserial</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">The polyserial correlation is the generalization of the biserial correlation for use with either dichotomous or polytomous items. For example, it may be the generalized form of the correlation with a criterion. It is the correlation of the item score with some continuous variable, usually the total score on the test.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Polyserial, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>Score_Conversion</termIdentifier>
+        <caption>
+            <langstring language="en-US">Score Conversion Table</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Raw scores and their corresponding converted values e.g. the values to be used in score reports.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, Score_Conversion, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>rbis</termIdentifier>
+        <caption>
+            <langstring language="en-US">r-biserial</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of item discrimination, r-biserial is an estimate of the biserial correlation between a latent continuous variable hypothesised to underlie performance on a dichotomous item (i.e. item score) and a criterion which is a variable that can take many possible vales, such as total score on the test.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Item Statistics, rbis, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <metadata>
+        <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+            <general>
+                <title>
+                    <string>IMS Global QTI Glossary of Terms for Usage Data Item Statistics</string>
+                </title>
+                <keyword>
+                    <string>QTI 3.0, Usage Data, Item Statistics Glossary</string>
+                </keyword>
+                <language>en-US</language>
+                <description>
+                    <string>Description: The set of terms that would be used to collect the item statistics. This is the value that will be entered in the 'name' element.</string>
+                    <string>History: The first formal release of this QTI Glossary as part of QTI 3.0.</string>
+                </description>
+            </general>
+            <lifeCycle>
+                <contribute>
+                    <role>
+                        <value>author</value>
+                    </role>
+                    <entity>Colin Smythe (IMS Global) and Mark McKell (IMS Global)</entity>
+                </contribute>
+                <version>
+                    <string>1.0</string>
+                </version>
+                <status>
+                    <value>Final Release</value>
+                </status>
+                <contribute>
+                    <role>
+                        <value>publisher</value>
+                    </role>
+                    <entity>IMS Global Learning Consortium Inc.</entity>
+                    <date>
+                        <dateTime>2021-12-20</dateTime>
+                    </date>
+                </contribute>
+            </lifeCycle>
+            <rights>
+                <copyrightAndOtherRestrictions>
+                    <value>yes</value>
+                </copyrightAndOtherRestrictions>
+                <description>
+                    <string>2021 (c) IMS Global Learning Consortium Inc.</string>
+                </description>
+            </rights>
+            <technical>
+                <format>XML</format>
+            </technical>
+        </lom>
+    </metadata>
+</vdex>

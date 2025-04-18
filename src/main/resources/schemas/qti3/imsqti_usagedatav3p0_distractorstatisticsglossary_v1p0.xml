@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ********************************************************************************************** -->
+<!--                                                                                                -->
+<!-- Author:         Colin Smythe (IMS Global) and Mark McKell (IMS Global)                         -->
+<!-- Date:           2021-12-20                                                                     -->
+<!-- Version:        1.0                                                                            -->
+<!-- Status:         IMS Final Release                                                              -->
+<!--                                                                                                -->
+<!-- Description:    The set of terms that would be used to collect distractor statistics. This is  -->
+<!--                 the value that will be entered in the 'name' element.                          -->
+<!--                 The set of terms in the vocabulary are:                                        -->
+<!--                 * AISResponse;                                                                 -->
+<!--                 * NumberChoosingResponse;                                                      -->
+<!--                 * PTbis-Response;                                                              -->
+<!--                 * PercentChoosingResponse;                                                     -->
+<!--                                                                                                -->
+<!-- History:        The first formal release of this QTI Glossary as part of QTIv3.0.              -->
+<!--                                                                                                -->
+<!-- Licenses:       IPR and Distribution Notices                                                   -->
+<!--                                                                                                -->
+<!--                 This machine readable vocabulary is derived from the IMS Global specification  -->
+<!--                 IMS Global Question and Test Interoperability (QTI): Usage Data Specification  -->
+<!--                 Version 3.0 found at http://www.imsglobal.org/question and the original IMS G- -->
+<!--                 lobal schema binding or code base http://www.imsglobal.org/question.           -->
+<!--                                                                                                -->
+<!--                 Recipients of this document are requested to submit, with their comments, not- -->
+<!--                 ification of any relevant patent claims or other intellectual property rights  -->
+<!--                 of which they may be aware that might be infringed by any implementation of t- -->
+<!--                 he specification set forth in this document, and to provide supporting docume- -->
+<!--                 ntation.                                                                       -->
+<!--                                                                                                -->
+<!--                 IMS takes no position regarding the validity or scope of any intellectual pro- -->
+<!--                 perty or other rights that  might be claimed to pertain to the implementation  -->
+<!--                 or use of the technology described in this document or the extent to which any -->
+<!--                 license under such rights might or might not be  available; neither does it r- -->
+<!--                 epresent that it has made any effort to identify any such rights. Information  -->
+<!--                 on the IMS procedures with respect to rights in IMS specifications  can be fo- -->
+<!--                 und at the IMS Intellectual Property Rights web page: http://www.imsglobal.or- -->
+<!--                 g/ipr/imsipr_policyFinal.pdf.                                                  -->
+<!--                                                                                                -->
+<!--                 Copyright © IMS Global Learning Consortium 1999-2021. All Rights Reserved.     -->
+<!--                                                                                                -->
+<!--                 Use of this specification to develop products or services is governed by the   -->
+<!--                 license with IMS found on the IMS website: http://www.imsglobal.org/license.h- -->
+<!--                 tml.                                                                           -->
+<!--                                                                                                -->
+<!--                 Permission is granted to all parties to use excerpts from this document as ne- -->
+<!--                 eded in producing requests for proposals.                                      -->
+<!--                                                                                                -->
+<!--                 The limited permissions granted above are perpetual and will not be revoked by -->
+<!--                 IMS or its successors or assigns.                                              -->
+<!--                                                                                                -->
+<!--                 THIS SPECIFICATION IS BEING OFFERED WITHOUT ANY WARRANTY WHATSOEVER, AND IN P- -->
+<!--                 ARTICULAR,  ANY WARRANTY OF NONINFRINGEMENT IS EXPRESSLY DISCLAIMED. ANY USE   -->
+<!--                 OF THIS SPECIFICATION SHALL BE MADE ENTIRELY AT THE IMPLEMENTERS OWN RISK, AND -->
+<!--                 NEITHER THE  CONSORTIUM, NOR ANY OF ITS MEMBERS OR SUBMITTERS, SHALL HAVE ANY  -->
+<!--                 LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD PARTY FOR ANY DAMAGES OF ANY  -->
+<!--                 NATURE WHATSOEVER,  DIRECTLY OR INDIRECTLY, ARISING FROM THE USE OF THIS SPEC- -->
+<!--                 IFICATION.                                                                     -->
+<!--                                                                                                -->
+<!-- Source XSLT File Information                                                                   -->
+<!-- ============================                                                                   -->
+<!-- XSL Generator:  Specificationv1p0_GenerationToolv1.xsl                                         -->
+<!-- XSLT Processor: Saxon-HE-9.4.0.4                                                               -->
+<!-- Release:        1.0                                                                            -->
+<!-- Date:           31st January, 2021                                                             -->
+<!-- Autogen Eng:    Colin Smythe (IMS Global, UK)                                                  -->
+<!-- Autogen Date:   2021-11-16                                                                     -->
+<!--                                                                                                -->
+<!-- Webster Auto-generation Toolkit                                                                -->
+<!-- ===============================                                                                -->
+<!-- This VDEX was auto-generated using the IMS Global Binding Auto-generation Toolkit (I-BAT). Wh- -->
+<!-- ile every attempt has been made to ensure that this tool auto-generates the VDEXs correctly,   -->
+<!-- users should be aware that this is an experimental tool. Permission is given to make use of t- -->
+<!-- his tool. IMS Global makes no claim on the materials created by third party users of this too- -->
+<!-- l. Details on how to use this auto-generation toolkit are available at the IMS Global web-sit- -->
+<!-- e: www.imsglobal.org.'                                                                         -->
+<!--                                                                                                -->
+<!-- Tool Copyright: 2005-2021 (c) IMS Global Learning Consortium Inc.  All Rights Reserved.        -->
+<!--                                                                                                -->
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<vdex profileType="glossaryOrDictionary" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 https://purl.imsglobal.org/spec/vdex/v1p0/schema/xsd/imsvdex_v1p0.xsd http://ltsc.ieee.org/xsd/LOM https://purl.imsglobal.org/spec/md/v1p3/schema/xsd/imsmd_loose_v1p3p2.xsd" orderSignificant="false" language="en-US">
+    <vocabName>
+        <langstring language="en-US">IMS Global QTI Glossary of Terms for Usage Data Distractor Statistics</langstring>
+    </vocabName>
+    <vocabIdentifier isRegistered="true">http://www.imsglobal.org/qti/qtiv3p0/imsqti_usagedatav3p0_distractorstatisticsglossary_v1p0</vocabIdentifier>
+    <term>
+        <termIdentifier>AISResponse</termIdentifier>
+        <caption>
+            <langstring language="en-US">Average Item Score for Response</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Equal to the mean of the item scores for the group of individuals that selected the response option.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Distractor Statistics, AISResponse, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>NumberChoosingResponse</termIdentifier>
+        <caption>
+            <langstring language="en-US">The number of people choosing a specified response or getting a specified code.</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Equal to the number of individuals that selected the response option. This can also be used for the number of individuals that received a certain rating on a judged item such as an essay question.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Distractor Statistics, Number Choosing Response, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>PTbis-Response</termIdentifier>
+        <caption>
+            <langstring language="en-US">r-pointbiserial for Response</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">A group-dependent measure of the discrimination of the response option, the pointbiserial correlation between selection of the response option and a criterion such as the total score on the test.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Distractor Statistics, PTbis-Response, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <term>
+        <termIdentifier>PercentChoosingResponse</termIdentifier>
+        <caption>
+            <langstring language="en-US">The percent of people choosing a specified response or getting a specified code.</langstring>
+        </caption>
+        <description>
+            <langstring language="en-US">Equal to the percent of test takers that selected the response option. This can also be used for the percent of individuals that received a certain rating on a judged item such as an essay question.</langstring>
+        </description>
+        <metadata>
+            <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+                <general>
+                    <keyword>
+                        <string>Distractor Statistics, Percent Choosing Response, IMS Global QTIv2.2</string>
+                    </keyword>
+                </general>
+                <relation>
+                    <resource>
+                        <description>
+                            <string>IMS Global</string>
+                        </description>
+                    </resource>
+                </relation>
+                <lifeCycle>
+                    <contribute>
+                        <role>
+                            <value>publisher</value>
+                        </role>
+                        <entity>IMS Global Learning Consortium Inc.</entity>
+                        <date>
+                            <dateTime>2015-03-01</dateTime>
+                        </date>
+                    </contribute>
+                    <status>
+                        <value>Final</value>
+                    </status>
+                </lifeCycle>
+            </lom>
+        </metadata>
+    </term>
+    <metadata>
+        <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+            <general>
+                <title>
+                    <string>IMS Global QTI Glossary of Terms for Usage Data Distractor Statistics</string>
+                </title>
+                <keyword>
+                    <string>QTI 3.0, Usage Data, Distractor Statistics Glossary</string>
+                </keyword>
+                <language>en-US</language>
+                <description>
+                    <string>Description: The set of terms that would be used to collect distractor statistics. This is the value that will be entered in the 'name' element.</string>
+                    <string>History: The first formal release of this QTI Glossary as part of QTIv3.0.</string>
+                </description>
+            </general>
+            <lifeCycle>
+                <contribute>
+                    <role>
+                        <value>author</value>
+                    </role>
+                    <entity>Colin Smythe (IMS Global) and Mark McKell (IMS Global)</entity>
+                </contribute>
+                <version>
+                    <string>1.0</string>
+                </version>
+                <status>
+                    <value>IMS Final Release</value>
+                </status>
+                <contribute>
+                    <role>
+                        <value>publisher</value>
+                    </role>
+                    <entity>IMS Global Learning Consortium Inc.</entity>
+                    <date>
+                        <dateTime>2021-12-20</dateTime>
+                    </date>
+                </contribute>
+            </lifeCycle>
+            <rights>
+                <copyrightAndOtherRestrictions>
+                    <value>yes</value>
+                </copyrightAndOtherRestrictions>
+                <description>
+                    <string>2021 (c) IMS Global Learning Consortium Inc.</string>
+                </description>
+            </rights>
+            <technical>
+                <format>XML</format>
+            </technical>
+        </lom>
+    </metadata>
+</vdex>

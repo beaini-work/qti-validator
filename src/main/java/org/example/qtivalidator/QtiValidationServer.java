@@ -18,7 +18,7 @@ public class QtiValidationServer {
 
     private static final int PORT = 8080;
 
-    /* ---------- pre‑compiled QTI schemas ---------- */
+    /* ---------- pre-compiled QTI schemas ---------- */
     private static final Map<String, Schema> QTI_SCHEMAS = loadQtiSchemas();
 
     private static Map<String, Schema> loadQtiSchemas() {
@@ -28,10 +28,7 @@ public class QtiValidationServer {
             return Map.of(
                 "qti3",
                 sf.newSchema(QtiValidationServer.class.getResource(
-                        "/schemas/qti3/imsqti_asiv3p0p1_v1p0.xsd")),
-                "qti21",
-                sf.newSchema(QtiValidationServer.class.getResource(
-                        "/schemas/qti21/imsqti_v2p1.xsd"))
+                        "/schemas/qti3/imsqti_asiv3p0p1_v1p0.xsd"))
             );
         } catch (SAXException e) {
             throw new ExceptionInInitializerError(e);
@@ -70,7 +67,7 @@ public class QtiValidationServer {
         });
 
         server.start();
-        System.out.printf("QTI‑validator listening on http://localhost:%d/validate%n", PORT);
+        System.out.printf("QTI-validator listening on http://localhost:%d/validate%n", PORT);
     }
 
     /* ---------- helpers ---------- */
@@ -102,14 +99,13 @@ public class QtiValidationServer {
         try (OutputStream os = ex.getResponseBody()) { os.write(b); }
     }
 
-    /* ---------- tiny class‑path resolver ---------- */
+    /* ---------- tiny class-path resolver ---------- */
     private static class ClasspathResolver implements LSResourceResolver {
         @Override
         public LSInput resolveResource(String type, String ns, String pubId,
                                        String sysId, String baseURI) {
             String name = sysId.substring(sysId.lastIndexOf('/') + 1);
-            InputStream in = QtiValidationServer.class.getResourceAsStream("/schemas/" + (
-                    sysId.contains("v3") ? "qti3/" : "qti21/") + name);
+            InputStream in = QtiValidationServer.class.getResourceAsStream("/schemas/qti3/" + name);
             return in == null ? null : new LSInput() {
                 public Reader getCharacterStream() { return null; }
                 public void setCharacterStream(Reader r) { }
@@ -123,7 +119,7 @@ public class QtiValidationServer {
                 public void setPublicId(String s) { }
                 public String getBaseURI() { return baseURI; }
                 public void setBaseURI(String s) { }
-                public String getEncoding() { return "UTF‑8"; }
+                public String getEncoding() { return "UTF-8"; }
                 public void setEncoding(String s) { }
                 public boolean getCertifiedText() { return false; }
                 public void setCertifiedText(boolean b) { }

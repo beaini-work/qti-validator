@@ -74,7 +74,7 @@ public class QtiValidationServer {
 
                 String param = getQueryParam(exchange.getRequestURI(), "schema");
                 if (param == null || param.isBlank()) {
-                    respond(exchange, 400, "Missing ?schema=");
+                    respondJson(exchange, 400, false, "Missing ?schema=");
                     return;
                 }
 
@@ -85,9 +85,9 @@ public class QtiValidationServer {
                 Validator v = schema.newValidator();
                 try {
                     v.validate(new StreamSource(new StringReader(xml)));
-                    respond(exchange, 200, "VALID");
+                    respondJson(exchange, 200, true, null);
                 } catch (Exception e) {
-                    respond(exchange, 422, "INVALID: " + e.getMessage());
+                    respondJson(exchange, 422, false, e.getMessage());
                 }
             });
 
@@ -127,6 +127,32 @@ public class QtiValidationServer {
         ex.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
         ex.sendResponseHeaders(code, b.length);
         try (OutputStream os = ex.getResponseBody()) { os.write(b); }
+    }
+
+    /* ---------- json helpers ---------- */
+
+    private static void respondJson(com.sun.net.httpserver.HttpExchange ex,
+                                    int code, boolean valid, String error)
+                                    throws IOException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{\"valid\": ").append(valid);
+        if (!valid && error != null) {
+            sb.append(", \"error\": \"").append(jsonEscape(error)).append("\"");
+        }
+        sb.append("}");
+
+        byte[] bytes = sb.toString().getBytes(StandardCharsets.UTF_8);
+        ex.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+        ex.sendResponseHeaders(code, bytes.length);
+        try (OutputStream os = ex.getResponseBody()) { os.write(bytes); }
+    }
+
+    private static String jsonEscape(String s) {
+        if (s == null) return "";
+        return s.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r");
     }
 
     /* ---------- tiny class-path resolver ---------- */

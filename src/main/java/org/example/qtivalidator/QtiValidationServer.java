@@ -9,6 +9,7 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
@@ -87,7 +88,7 @@ public class QtiValidationServer {
                     v.validate(new StreamSource(new StringReader(xml)));
                     respondJson(exchange, 200, true, null);
                 } catch (Exception e) {
-                    respondJson(exchange, 422, false, e.getMessage());
+                    respondJsonInvalid(exchange, 422, e);
                 }
             });
 
@@ -153,6 +154,28 @@ public class QtiValidationServer {
                 .replace("\"", "\\\"")
                 .replace("\n", "\\n")
                 .replace("\r", "\\r");
+    }
+
+    private static void respondJsonInvalid(com.sun.net.httpserver.HttpExchange ex,
+                                           int code, Exception exc) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{\"valid\": false, \"errors\": [");
+
+        sb.append("{\"message\": \"").append(jsonEscape(exc.getMessage())).append("\"");
+
+        if (exc instanceof SAXParseException spe) {
+            int line = spe.getLineNumber();
+            int col  = spe.getColumnNumber();
+            if (line >= 0) sb.append(", \"line\": ").append(line);
+            if (col  >= 0) sb.append(", \"column\": ").append(col);
+        }
+
+        sb.append("}]}");
+
+        byte[] bytes = sb.toString().getBytes(StandardCharsets.UTF_8);
+        ex.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+        ex.sendResponseHeaders(code, bytes.length);
+        try (OutputStream os = ex.getResponseBody()) { os.write(bytes); }
     }
 
     /* ---------- tiny class-path resolver ---------- */
